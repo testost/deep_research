@@ -87,7 +87,7 @@ print(content)
 
 search_toolkit = SearchToolkit()
 search_tools = [
-    search_toolkit.search_google,  # Only use Google search
+    search_toolkit.search_linkup  # Switch to LinkUp search
 ]
 
 # Content Research Planner Agent (TogetherAI)
@@ -152,7 +152,13 @@ content_classifier_agent = ChatAgent(
 research_agent = ChatAgent(
     system_message=BaseMessage.make_assistant_message(
         role_name="Research Agent",
-        content="""From the topics listed by the research planner agent as NEEDS_SEARCH, conduct additional research using the search tools provided"""
+        content="""From the topics listed by the research planner agent as NEEDS_SEARCH, conduct additional research using LinkUp search.
+        
+        When searching:
+        - Use depth="deep" for comprehensive results
+        - Use output_type="sourcedAnswer" for direct answers
+        - Verify information across multiple sources
+        """
     ),
     model=ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
