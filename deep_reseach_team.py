@@ -140,8 +140,8 @@ content_classifier_agent = ChatAgent(
         }}"""
     ),
     model=ModelFactory.create(
-        model_platform=ModelPlatformType.OPENAI,
-        model_type=ModelType.GPT_4O,
+        model_platform=ModelPlatformType.DEEPSEEK,
+        model_type=ModelType.DEEPSEEK_REASONER,
         model_config_dict=ChatGPTConfig().as_dict(),
     ),
 )
