@@ -1,0 +1,13 @@
+{
+    "recipe": "Create a technical blog post about {topic} that highlights key features and implementation details",
+    "examples": "Example: 'Introducing FastAPI: A Modern Python Web Framework\n\nFastAPI is revolutionizing Python web development with its high performance and developer-friendly features...'",
+    "ingredients": [
+        "What is the main technology/topic?",
+        "What are the key features?",
+        "What are the implementation details?",
+        "What are the benefits and use cases?",
+        "Are there any benchmarks or comparisons?",
+        "What is the current state and future roadmap?"
+    ],
+    "needs_research": "TRUE"
+} 
