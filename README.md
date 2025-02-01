@@ -2,6 +2,8 @@
 
 A multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research.
 
+[![Deep Research Demo](assets/YouTube.png)](https://www.youtube.com/watch?v=mGET1RKXW3o)
+
 ## The Vision
 
 Currently, AI research agents have significant limitations - they often make assumptions, fabricate information, or miss crucial context. This project was heavily inspired by two groundbreaking works:
@@ -22,6 +24,7 @@ This project is built on [CAMEL-AI's Workforce system](https://docs.camel-ai.org
 
 👋 Stay updated with the latest developments:
 - 📺 [YouTube Tutorials & Updates](https://www.youtube.com/@omni_georgio)
+- 🎥 [Watch the Deep Research Demo](https://www.youtube.com/watch?v=mGET1RKXW3o)
 - 🐦 [Follow on X (Twitter)](https://x.com/home)
 
 Your feedback and contributions help make this project better!
@@ -229,8 +232,6 @@ The tool uses several AI agents, each configurable through environment variables
 - Research Agent
 - Report Creator Agent
 - Report Quality Judge Agent
-
-
 
 ## License
 
