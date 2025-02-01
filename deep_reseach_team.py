@@ -34,6 +34,7 @@ from camel.configs.openai_config import ChatGPTConfig
 from camel.messages.base import BaseMessage
 from camel.models import ModelFactory
 from camel.tasks.task import Task
+from camel.configs import DeepSeekConfig
 from camel.toolkits import (
     SearchToolkit,
 )
@@ -89,10 +90,11 @@ search_tools = [
     search_toolkit.search_google,  # Only use Google search
 ]
 
+# Content Research Planner Agent (TogetherAI)
 content_classifier_agent = ChatAgent(
     system_message=BaseMessage.make_assistant_message(
         role_name="Content Research Planner Agent",
-            content=f"""You are a Research Planning Agent that analyzes content against a required ingredients list.
+        content=f"""You are a Research Planning Agent that analyzes content against a required ingredients list.
 
         INPUT FORMAT:
         1. Content: [Original content to analyze]
@@ -140,12 +142,13 @@ content_classifier_agent = ChatAgent(
         }}"""
     ),
     model=ModelFactory.create(
-        model_platform=ModelPlatformType.DEEPSEEK,
-        model_type=ModelType.DEEPSEEK_REASONER,
-        model_config_dict=ChatGPTConfig().as_dict(),
+        model_platform=ModelPlatformType.OPENAI,
+        model_type=ModelType.O3_MINI,
+        model_config_dict=ChatGPTConfig().as_dict()
     ),
 )
 
+# Research Agent (OpenAI)
 research_agent = ChatAgent(
     system_message=BaseMessage.make_assistant_message(
         role_name="Research Agent",
@@ -154,12 +157,12 @@ research_agent = ChatAgent(
     model=ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
         model_type=ModelType.GPT_4O,
-        model_config_dict=ChatGPTConfig().as_dict(),
+        model_config_dict=ChatGPTConfig().as_dict()
     ),
-
-   tools=search_tools,
+    tools=search_tools,
 )
 
+# Report Creator Agent (Anthropic)
 report_creator_agent = ChatAgent(
     system_message=BaseMessage.make_assistant_message(
         role_name="Report Creator Agent",
@@ -212,10 +215,11 @@ report_creator_agent = ChatAgent(
     model=ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
         model_type=ModelType.GPT_4O,
-        model_config_dict=ChatGPTConfig().as_dict(),
-    ),
+        model_config_dict=ChatGPTConfig().as_dict()
+    )
 )
 
+# Judge Agent (OpenAI)
 judge_agent = ChatAgent(
     system_message=BaseMessage.make_assistant_message(
         role_name="Report Quality Judge Agent",
@@ -276,8 +280,8 @@ judge_agent = ChatAgent(
     ),
     model=ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
-        model_type=ModelType.GPT_4O,
-        model_config_dict=ChatGPTConfig().as_dict(),
+        model_type=ModelType.O3_MINI,
+        model_config_dict=ChatGPTConfig().as_dict()
     ),
 )
 
