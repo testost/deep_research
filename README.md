@@ -1,6 +1,6 @@
-# Deep Research Team
+# Welcome to Deep Research
 
-A multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research and creating content.
+A multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research.
 
 ## The Vision
 
