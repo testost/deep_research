@@ -4,13 +4,27 @@ A multi-agent AI research system designed to know what it knows (and doesn't kno
 
 ## The Vision
 
-Currently, AI research agents have significant limitations - they often make assumptions, fabricate information, or miss crucial context. This project was heavily inspired by the groundbreaking work in ["TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation"](https://arxiv.org/abs/2410.03608) by Cook et al., which demonstrated how structured checklists can significantly improve LLM evaluation and generation quality.
+Currently, AI research agents have significant limitations - they often make assumptions, fabricate information, or miss crucial context. This project was heavily inspired by two groundbreaking works:
+
+1. ["TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation"](https://arxiv.org/abs/2410.03608) by Cook et al., which demonstrated how structured checklists can significantly improve LLM evaluation and generation quality.
+
+2. [NVIDIA's Nemotron-4 340B Reward Model](https://build.nvidia.com/nvidia/nemotron-4-340b-reward), which pioneered techniques for reward modeling in the loop. Their work on reward-based learning has influenced our approach to quality assessment and continuous improvement in research tasks.
 
 This might seem like a small thing within research, but if you really think about it, this is the start of something much bigger. If the agents can understand what they don't know—just like a human—they can reason about what they need to learn. This has the potential to make the process of agents acquiring information much, much faster and in turn being much smarter.
 
 ## System Architecture
 
 ![Deep Research Team Architecture](assets/diogram.png)
+
+This project is built on [CAMEL-AI's Workforce system](https://docs.camel-ai.org/key_modules/workforce.html), which provides a robust framework for coordinating multiple AI agents. The workforce architecture enables our agents to work together seamlessly, with built-in task management and failure handling.
+
+## Connect & Learn More
+
+👋 Stay updated with the latest developments:
+- 📺 [YouTube Tutorials & Updates](https://www.youtube.com/@omni_georgio)
+- 🐦 [Follow on X (Twitter)](https://x.com/home)
+
+Your feedback and contributions help make this project better!
 
 ## How It Works
 
@@ -163,7 +177,45 @@ It's important to note that this is v0, and there are known limitations:
 
 ## Future Directions
 
-Planned improvements include:
+Our roadmap for improving the system includes:
+
+### Research Intelligence
+- **Adaptive Tool Selection**
+  - Dynamic selection of research tools based on content type
+  - Integration with GitHub for code research
+  - YouTube API for tutorial/demo content
+  - Academic paper databases for scholarly research
+  - Automatic tool selection based on query type
+
+### Quality Assessment
+- **Enhanced Judge Agent Criteria**
+  - More sophisticated evaluation metrics
+  - Domain-specific assessment criteria
+  - Confidence scoring improvements
+  - Source credibility weighting
+
+### Model Support
+- **Better Open-Model Support**
+  - Broader compatibility with open-source models
+  - Easy integration of new models
+  - Performance comparison framework
+  - Cost-effective model selection
+
+### Research Optimization
+- **Smarter Research Depth Handling**
+  - Automatic depth determination
+  - Resource optimization
+  - Context-aware search strategies
+  - Priority-based research planning
+
+### Automation
+- **Automated Instruction Generation**
+  - Self-generating research recipes
+  - Dynamic task definition
+  - Autonomous research planning
+  - Continuous learning from past tasks
+
+### Current Development
 - Automated recipe generation
 - Enhanced source validation
 - Expanded search capabilities
@@ -178,21 +230,10 @@ The tool uses several AI agents, each configurable through environment variables
 - Report Creator Agent
 - Report Quality Judge Agent
 
-## Contributing
 
-1. Fork the repository
-2. Create your feature branch
-3. Submit a pull request
 
 ## License
 
 MIT License
 
-## Support & Community
 
-This is an evolving project, and community input is valuable. For support:
-- Open an issue for bugs/features
-- Join our discussions for ideas
-- Share your use cases and feedback
-
-Let's work together to make AI research more reliable and self-aware.

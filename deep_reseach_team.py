@@ -168,7 +168,7 @@ research_agent = ChatAgent(
     tools=search_tools,
 )
 
-# Report Creator Agent (Anthropic)
+# Report Creator Agent 
 report_creator_agent = ChatAgent(
     system_message=BaseMessage.make_assistant_message(
         role_name="Report Creator Agent",
