@@ -6,20 +6,11 @@ A multi-agent AI research system designed to know what it knows (and doesn't kno
 
 Currently, AI research agents have significant limitations - they often make assumptions, fabricate information, or miss crucial context. This project was heavily inspired by the groundbreaking work in ["TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation"](https://arxiv.org/abs/2410.03608) by Cook et al., which demonstrated how structured checklists can significantly improve LLM evaluation and generation quality.
 
-The TICK paper showed that:
-- LLMs can reliably produce high-quality, tailored evaluation checklists
-- Using checklists leads to 46.4% → 52.2% increase in agreement between LLM judgments and human preferences
-- Structured, multi-faceted evaluation improves generation quality across multiple benchmarks
+This might seem like a small thing within research, but if you really think about it, this is the start of something much bigger. If the agents can understand what they don't know—just like a human—they can reason about what they need to learn. This has the potential to make the process of agents acquiring information much, much faster and in turn being much smarter.
 
-Building on these insights, along with work from O3 and DeepSeek, I set out to create a system that brings similar structured evaluation to the research process.
+## System Architecture
 
-The goal was to create a system that:
-- Understands its own knowledge boundaries
-- Explicitly identifies information gaps
-- Conducts targeted research to fill those gaps
-- Validates its findings before reporting
-
-This v0 release represents the first step toward more reliable and self-aware AI research systems.
+![Deep Research Team Architecture](assets/diogram.png)
 
 ## How It Works
 
@@ -33,28 +24,28 @@ Think of these as detailed instructions for the research process. While currentl
 - Research parameters
 
 ### 2. Research Intelligence Planning Agent
-This agent:
+The first step in our research pipeline:
 - Analyzes input content against recipe requirements
 - Maps known vs unknown information
 - Creates structured research plans
 - Identifies which gaps can be filled through research
 
-### 3. Deep Research Agent
-The detective of our system:
+### 3. Deep Search Agent
+Our dedicated researcher:
 - Executes research plans
 - Uses Google search strategically
 - Verifies information from multiple sources
 - Documents findings and confidence levels
 
-### 4. Report Maker Agent
-Synthesizes everything into coherent output:
+### 4. Report Creator Agent
+Our content synthesizer:
 - Combines original content with research findings
 - Follows recipe format requirements
 - Maintains clear sourcing
 - Highlights any remaining uncertainties
 
-### 5. Judge Agent
-Our quality control:
+### 5. The Judge Agent
+Our final quality check:
 - Evaluates output completeness
 - Checks adherence to recipe
 - Validates information accuracy
@@ -112,23 +103,23 @@ When using a recipe ID, the following data structure is retrieved:
 
 ### How It Works
 
-1. **Content Analysis**
+1. **Research Intelligence Planning Phase**
    - The Content Research Planner Agent analyzes the input content
    - Identifies missing information and research needs
    - Creates a structured research plan
 
-2. **Research Phase**
-   - Research Agent performs targeted searches using Google
+2. **Deep Search Phase**
+   - The Deep Search Agent performs targeted searches using Google
    - Verifies facts and gathers additional context
    - Documents findings and sources
 
-3. **Report Generation**
+3. **Report Creation Phase**
    - Report Creator Agent synthesizes all information
    - Follows specified recipe format
    - Ensures all required ingredients are covered
 
-4. **Quality Control**
-   - Report Quality Judge Agent evaluates the output
+4. **Judgment Phase**
+   - The Judge Agent evaluates the output
    - Checks completeness and accuracy
    - Provides quality scores and recommendations
 

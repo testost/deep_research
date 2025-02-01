@@ -1,0 +1,11 @@
+{
+    "content": "This PR adds support for the Qwen LLM models (qwen-max, qwen-plus, qwen-turbo, qwen-long) to enhance platform capabilities",
+    
+    "ingredients": ["What is Qwen?", "What models are included?", "What are the benefits?", "How to implement?"],
+    
+    "recipe": "Create a technical announcement post that explains the new integration and its benefits",
+    
+    "needs_research": true,
+    
+    "example_output": "Exciting news! We've just added support for Qwen's powerful LLM models, including qwen-max and qwen-plus..."
+} 

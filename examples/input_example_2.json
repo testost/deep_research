@@ -1,0 +1,98 @@
+
+{
+content = """feat: Add support for Qwen model platform (#1033)#1137 Merged Wendong-Fan merged 3 commits into master from qwen Nov 1, 2024 Merged feat: Add support for Qwen model platform (#1033)#1137 Wendong-Fan merged 3 commits into master from qwen Nov 1, 2024 +403 −2 Conversation This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below MuggleJinx commented Oct 31, 2024 Description This PR adds support for the Qwen LLM models including qwen-max qwen-plus qwen-turbo qwen-long The addition of Qwen-series models enhances the platform's capabilities providing support for a broader range of language models and enabling users to leverage different performance tiers Motivation and Context Closes issue #1033 Types of changes New feature (non-breaking change which adds core functionality) Implemented Tasks Implement consistent interface for Qwen-series model Add the corresponding example and test file Checklist I have read the CONTRIBUTION guide I have updated the tests accordingly I have updated the documentation accordingly MuggleJinx implemet qwen model cf3e9a0 MuggleJinx requested a review from Wendong-Fan October 31 2024 05:40 Wendong-Fan linked an issue Oct 31 2024 that may be closed by this pull request [Feature Request] Integrate Qwen model platform #1033 Closed Wendong-Fan added this to the Sprint 15 milestone Oct 31 2024 Wendong-Fan added the Model Related to backend models label Oct 31 2024 Wendong-Fan assigned MuggleJinx Oct 31 2024 Wendong-Fan update based on comment"""
+needs_research = "needs_research is true, this content needs to be researched for additional context about Qwen models and their integration"
+
+ingredients = """
+
+Required Information:
+
+1. Project Contributors
+   - Who created or contributed to this PR, with their Github handle
+   - Who reviewed and approved the PR
+
+2. Technologies
+   - What is the name and purpose of the main framework/platform this PR is adding to, e.g. Can you spell check this? Do you know exactly how they describe themselves
+   - What are the names and purposes of the technologies being integrated e.g. do you knowthe key benefits of the integration
+
+3. Integration Purpose
+   - What new capabilities does this integration add to the main framework
+   - How do the technologies interact with the main framework
+   - Who is this integration designed for
+
+4. Documentation Access
+   - Link to PR and related issue
+   - Where to find usage examples"""
+
+
+recipe = """Objective: Generate concise, engaging, and technical social media posts promoting AI tools, cookbooks, or integrations. The tone should be action-oriented and clear.
+
+Key features:
+Catchy, action-oriented headline: [Begin with an exciting statement to grab attention, showcasing the feature or outcome.]
+Overview of benefits: [Explain what users will achieve or learn, focusing on the key value proposition.]
+Details of tools/technologies: [Mention tools or components without handles, but include emojis for emphasis.]
+Call-to-action: [Provide a link to the relevant resource and invite the audience to explore further.]
+
+Make sure you follow the examples given """
+
+
+print(content)
+
+"""# Create Worker Agents"""
+
+search_toolkit = SearchToolkit()
+search_tools = [
+    search_toolkit.search_google,  # Only use Google search
+]
+
+content_classifier_agent = ChatAgent(
+    system_message=BaseMessage.make_assistant_message(
+        role_name="Content Research Planner Agent",
+            content=f"""You are a Research Planning Agent that analyzes content against a required ingredients list.
+
+        INPUT FORMAT:
+        1. Content: [Original content to analyze]
+        2. Ingredients: [List of required information]
+
+        YOUR TASK:
+        Analyze the content and create a detailed research plan by:
+        1. Reading through the content thoroughly
+        2. Comparing against each ingredient in the ingredients list
+        3. Categorizing each piece of required information
+
+        Required Ingredients List:
+        {ingredients}
+
+        CATEGORIZATION SYSTEM:
+        For each ingredient, provide:
+        1. Status (one of):
+           * KNOWN - Information is explicitly present in content
+           * NEEDS_SEARCH - Information is missing but can be researched
+           * UNSEARCHABLE - Information cannot be found through research
+           * REQUIRES_INPUT - Information needs direct input from content creator
+
+        2. Evidence/Reasoning:
+           * For KNOWN: Quote the relevant content section
+           * For NEEDS_SEARCH: Explain search strategy
+           * For UNSEARCHABLE: Explain why it can't be researched
+           * For REQUIRES_INPUT: Explain what input is needed
+
+        OUTPUT FORMAT:
+        Provide your analysis in this structure:
+        {{
+            "ingredient_analysis": [
+                {{
+                    "ingredient": "[Name of ingredient]",
+                    "status": "[KNOWN/NEEDS_SEARCH/UNSEARCHABLE/REQUIRES_INPUT]",
+                    "evidence": "[Supporting evidence or explanation]",
+                    "action_needed": "[What needs to be done for this ingredient]"
+                }}
+            ],
+            "research_plan": {{
+                "known_information": ["List of what we already have"],
+                "search_topics": ["List of what needs research"],
+                "required_inputs": ["List of what needs direct input"]
+            }}
+        }}"""
+
+}
