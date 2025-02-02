@@ -233,6 +233,12 @@ The tool uses several AI agents, each configurable through environment variables
 - Report Creator Agent
 - Report Quality Judge Agent
 
+---
+
+> "I don't know everything, I only know what I know"  
+> — o3  
+> — FriskyFennecFox
+
 ## License
 
 MIT License
