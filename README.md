@@ -1,18 +1,20 @@
 # Welcome to Deep Research
 
-A multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research.
+This is a reseach tool as a multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research.
 
-[![Deep Research Demo](assets/YouTube.png)](https://www.youtube.com/watch?v=mGET1RKXW3o)
+This might seem like a small thing within research, but if you really think about it, this is the start of something much bigger. If the agents can understand what they don't know—just like a human—they can reason about what they need to learn. This has the potential to make the process of agents acquiring information much, much faster and in turn being much smarter.
+
+Click the image below to watch a demo of the tool and how the code works in detail:
+
+[![Deep Research Demo](assets/YouTube.jpg)](https://www.youtube.com/watch?v=mGET1RKXW3o)
 
 ## The Vision
 
 Currently, AI research agents have significant limitations - they often make assumptions, fabricate information, or miss crucial context. This project was heavily inspired by two groundbreaking works:
 
-1. ["TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation"](https://arxiv.org/abs/2410.03608) by Cook et al., which demonstrated how structured checklists can significantly improve LLM evaluation and generation quality.
+1. ["TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation"](https://arxiv.org/abs/2410.03608) by Jonathan Cook, it demonstrated how structured checklists can significantly improve LLM evaluation and generation quality.
 
 2. [NVIDIA's Nemotron-4 340B Reward Model](https://build.nvidia.com/nvidia/nemotron-4-340b-reward), which pioneered techniques for reward modeling in the loop. Their work on reward-based learning has influenced our approach to quality assessment and continuous improvement in research tasks.
-
-This might seem like a small thing within research, but if you really think about it, this is the start of something much bigger. If the agents can understand what they don't know—just like a human—they can reason about what they need to learn. This has the potential to make the process of agents acquiring information much, much faster and in turn being much smarter.
 
 ## System Architecture
 
@@ -20,12 +22,6 @@ This might seem like a small thing within research, but if you really think abou
 
 This project is built on [CAMEL-AI's Workforce system](https://docs.camel-ai.org/key_modules/workforce.html), which provides a robust framework for coordinating multiple AI agents. The workforce architecture enables our agents to work together seamlessly, with built-in task management and failure handling.
 
-## Connect & Learn More
-
-👋 Stay updated with the latest developments:
-- 📺 [YouTube Tutorials & Updates](https://www.youtube.com/@omni_georgio)
-- 🎥 [Watch the Deep Research Demo](https://www.youtube.com/watch?v=mGET1RKXW3o)
-- 🐦 [Follow on X (Twitter)](https://x.com/home)
 
 Your feedback and contributions help make this project better!
 
@@ -71,26 +67,45 @@ Our final quality check:
 ## Prerequisites
 
 - Python 3.8+
-- OpenAI API key
-- Anthropic API key
-- Google API key
-- Google Search Engine ID
+- API Keys:
+  - OpenAI API key (for GPT-4)
+  - Anthropic API key (for Claude)
+  - Google Custom Search API key
+  - Google Custom Search Engine ID (cx)
 
 ## Installation
 
-1. Clone the repository
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/deep-research.git
+cd deep-research
+```
+
 2. Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file with your API keys:
+3. Create a `.env` file in the root directory with your API keys:
 ```bash
-OPENAI_API_KEY=your_openai_key
-ANTHROPIC_API_KEY=your_anthropic_key
-GOOGLE_API_KEY=your_google_key
-SEARCH_ENGINE_ID=your_search_engine_id
+# Required API Keys
+OPENAI_API_KEY=sk-...  # Your OpenAI API key
+ANTHROPIC_API_KEY=sk-ant-...  # Your Anthropic API key
+
+# Google Search Configuration
+GOOGLE_API_KEY=AIza...  # Your Google API key
+GOOGLE_CX_ID=...  # Your Custom Search Engine ID
+
+# Optional Configuration
+MODEL_NAME=gpt-4  # Default model to use
+TEMPERATURE=0.7  # Default temperature setting
+MAX_TOKENS=4000  # Maximum response length
 ```
+
+⚠️ **Security Note**: 
+- Never commit your `.env` file to version control
+- Keep your API keys secure and rotate them regularly
+- Consider using environment variables in production
 
 ## Usage
 
@@ -105,6 +120,14 @@ The tool accepts two main inputs:
 }
 ```
 
+## Connect & Learn More
+
+👋 Stay updated with the latest developments:
+- 📺 [YouTube Tutorials & Updates](https://www.youtube.com/@omni_georgio)
+- 🎥 [Watch the Deep Research Demo](https://www.youtube.com/watch?v=mGET1RKXW3o)
+- 🐦 [Follow on X (Twitter)](https://x.com/home)
+
+
 ### Recipe Structure
 
 When using a recipe ID, the following data structure is retrieved:
@@ -117,28 +140,6 @@ When using a recipe ID, the following data structure is retrieved:
     "needs_research": "TRUE/FALSE" # Whether additional research is needed
 }
 ```
-
-### How It Works
-
-1. **Research Intelligence Planning Phase**
-   - The Content Research Planner Agent analyzes the input content
-   - Identifies missing information and research needs
-   - Creates a structured research plan
-
-2. **Deep Search Phase**
-   - The Deep Search Agent performs targeted searches using Google
-   - Verifies facts and gathers additional context
-   - Documents findings and sources
-
-3. **Report Creation Phase**
-   - Report Creator Agent synthesizes all information
-   - Follows specified recipe format
-   - Ensures all required ingredients are covered
-
-4. **Judgment Phase**
-   - The Judge Agent evaluates the output
-   - Checks completeness and accuracy
-   - Provides quality scores and recommendations
 
 ### Example Output
 
