@@ -1,12 +1,14 @@
 # Welcome to Deep Research
 
-This is a reseach tool as a multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research.
+This is a research tool as a multi-agent AI research system designed to know what it knows (and doesn't know) when conducting research.
 
 This might seem like a small thing within research, but if you really think about it, this is the start of something much bigger. If the agents can understand what they don't know—just like a human—they can reason about what they need to learn. This has the potential to make the process of agents acquiring information much, much faster and in turn being much smarter.
 
 Click the image below to watch a demo of the tool and how the code works in detail:
 
 ![Deep Research Demo](assets/youtube.png)
+
+![Deep Research Team Architecture](assets/diogram.png)
 
 ## The Vision
 
