@@ -6,7 +6,7 @@ This might seem like a small thing within research, but if you really think abou
 
 Click the image below to watch a demo of the tool and how the code works in detail:
 
-[![Deep Research Demo](assets/YouTube.jpg)](https://www.youtube.com/watch?v=mGET1RKXW3o)
+[![Deep Research Demo](/assets/YouTube.png)](https://www.youtube.com/watch?v=mGET1RKXW3o)
 
 ## The Vision
 
