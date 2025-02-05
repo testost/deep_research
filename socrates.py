@@ -98,7 +98,7 @@ research_planner = ChatAgent(
     ),
     model=ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
-        model_type=ModelType.GPT_4O,
+        model_type=ModelType.O3_MINI,
         model_config_dict=ChatGPTConfig().as_dict()
     )
 )
