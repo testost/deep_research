@@ -87,7 +87,8 @@ print(content)
 
 search_toolkit = SearchToolkit()
 search_tools = [
-    search_toolkit.search_linkup  # Switch to LinkUp search
+    #search_toolkit.search_linkup  # Switch to LinkUp search
+    search_toolkit.search_google  # Switch to Google search
 ]
 
 # Content Research Planner Agent (TogetherAI)
